@@ -19,49 +19,51 @@ export default function OurWork() {
   const next = () => setCurrent((c) => (c === workImages.length - 1 ? 0 : c + 1));
 
   return (
-    <section id="work" className="py-20 bg-white">
-      <div className="max-w-4xl mx-auto px-6">
-        <h2 className="section-heading">Our Work</h2>
+    <section id="work" style={{ padding: "80px 40px", backgroundColor: "white" }}>
+      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+        <h2 style={{
+          fontSize: "1.5rem",
+          fontWeight: 700,
+          textTransform: "uppercase",
+          letterSpacing: "0.08em",
+          textAlign: "center",
+          marginBottom: "40px",
+          color: "#1a1a1a",
+        }}>
+          Our Work
+        </h2>
 
-        {/* Carousel — matches the bordered box in the screenshot */}
-        <div className="relative border border-gray-200 rounded-sm overflow-hidden bg-gray-50" style={{ aspectRatio: "4/3" }}>
+        {/* Carousel */}
+        <div style={{ position: "relative", width: "100%", aspectRatio: "16/9", backgroundColor: "#f0f0f0" }}>
           <Image
             src={workImages[current].src}
             alt={workImages[current].alt}
             fill
-            className="object-cover"
+            style={{ objectFit: "cover" }}
           />
 
-          {/* Prev arrow */}
-          <button
-            onClick={prev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-full bg-white/60 hover:bg-white/80 flex items-center justify-center text-2xl text-[var(--navy)] transition-colors"
-            aria-label="Previous"
-          >
-            ‹
-          </button>
+          {/* Prev */}
+          <button onClick={prev} style={{
+            position: "absolute", left: 0, top: 0, height: "100%", width: "50px",
+            backgroundColor: "rgba(0,0,0,0.25)", color: "white", border: "none",
+            fontSize: "2rem", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center",
+          }}>‹</button>
 
-          {/* Next arrow */}
-          <button
-            onClick={next}
-            className="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-full bg-white/60 hover:bg-white/80 flex items-center justify-center text-2xl text-[var(--navy)] transition-colors"
-            aria-label="Next"
-          >
-            ›
-          </button>
+          {/* Next */}
+          <button onClick={next} style={{
+            position: "absolute", right: 0, top: 0, height: "100%", width: "50px",
+            backgroundColor: "rgba(0,0,0,0.25)", color: "white", border: "none",
+            fontSize: "2rem", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center",
+          }}>›</button>
         </div>
 
-        {/* Dot indicators */}
-        <div className="flex justify-center gap-2 mt-4">
+        {/* Dots */}
+        <div style={{ display: "flex", justifyContent: "center", gap: "8px", marginTop: "16px" }}>
           {workImages.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrent(i)}
-              aria-label={`Image ${i + 1}`}
-              className={`w-2.5 h-2.5 rounded-full transition-all ${
-                i === current ? "bg-[var(--blue-accent)]" : "bg-gray-300"
-              }`}
-            />
+            <button key={i} onClick={() => setCurrent(i)} style={{
+              width: "10px", height: "10px", borderRadius: "50%", border: "none", cursor: "pointer",
+              backgroundColor: i === current ? "#2d4a7a" : "#ccc",
+            }} />
           ))}
         </div>
       </div>

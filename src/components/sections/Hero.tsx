@@ -3,31 +3,68 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-start overflow-hidden bg-[var(--navy)]">
+    <section style={{
+      position: "relative",
+      minHeight: "100vh",
+      display: "flex",
+      alignItems: "center",
+      backgroundColor: "#1a2a4a",
+      marginTop: "104px",
+    }}>
       {/* Background Image */}
-      <div className="absolute inset-0 z-0">
+      <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
         <Image
-          src="/images/hero-bg.jpg"
+          src="/images/hero-bg.jpeg"
           alt="Yacht being detailed in Antigua"
           fill
           priority
-          className="object-cover object-center opacity-40"
+          style={{ objectFit: "cover", objectPosition: "center" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[var(--navy-dark)]/90 via-[var(--navy)]/70 to-transparent" />
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          backgroundColor: "rgba(26, 42, 74, 0.55)",
+        }} />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 pt-32 pb-24">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 max-w-xl">
+      <div style={{
+        position: "relative",
+        zIndex: 1,
+        maxWidth: "1200px",
+        margin: "0 auto",
+        width: "100%",
+        padding: "80px 80px 80px 120px",
+      }}>
+        <h1 style={{
+          fontSize: "clamp(2.5rem, 5vw, 4rem)",
+          fontWeight: 700,
+          color: "white",
+          lineHeight: 1.15,
+          marginBottom: "24px",
+          maxWidth: "700px",
+        }}>
           Best Yacht Detailing Services in Antigua
         </h1>
-
-        <p className="text-white/80 text-base md:text-lg max-w-md mb-8 leading-relaxed">
-          Allow our team of experts to attend to your yacht — right down to
-          the smallest of details.
+        <p style={{
+          color: "rgba(255,255,255,0.9)",
+          fontSize: "1.1rem",
+          maxWidth: "500px",
+          marginBottom: "40px",
+          lineHeight: 1.7,
+        }}>
+          Allow our team of specialists to revitalize your yacht down to the smallest of details.
         </p>
-
-        <Link href="#contact" className="btn-primary">
+        <Link href="#contact" style={{
+          display: "inline-block",
+          backgroundColor: "#2d4a7a",
+          color: "white",
+          padding: "16px 32px",
+          fontSize: "13px",
+          fontWeight: 600,
+          letterSpacing: "0.08em",
+          textTransform: "uppercase",
+        }}>
           Contact Us
         </Link>
       </div>

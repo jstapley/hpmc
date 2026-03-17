@@ -4,7 +4,6 @@ import Customers from "@/components/sections/Customers";
 import Purpose from "@/components/sections/Purpose";
 import OurWork from "@/components/sections/OurWork";
 import Reviews from "@/components/sections/Reviews";
-import Contact from "@/components/sections/Contact";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -16,7 +15,6 @@ export default function Home() {
       <Purpose />
       <OurWork />
       <Reviews />
-      <Contact />
       <Footer />
     </main>
   );
